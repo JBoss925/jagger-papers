@@ -11,7 +11,7 @@ import {
 import { getPaperBySlug, sourceDocuments } from "../../content/papers";
 import { docHref } from "../../content/editorial";
 import ImageViewer from "@jagger-ui/components/editorial/ImageViewer";
-import PapersHeader from "./PapersHeader";
+import EditorialHeader from "@jagger-ui/components/editorial/EditorialHeader";
 import { usePapersTheme } from "@jagger-ui/hooks/usePapersTheme";
 import { usePapersScrollTop } from "@jagger-ui/hooks/usePapersScrollTop";
 function PaperPage() {
@@ -47,7 +47,8 @@ function PaperPage() {
   }
   return (
     <div className={`papers-page papers-page--${theme}`}>
-      <PapersHeader
+      <EditorialHeader
+        mode="papers"
         projectSlug={paper.slug}
         query={searchQuery}
         onQueryChange={setSearchQuery}

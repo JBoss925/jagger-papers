@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { papers } from "../../content/papers";
 import PaperPreview from "@jagger-ui/components/editorial/PaperPreview";
-import PapersHeader from "./PapersHeader";
+import EditorialHeader from "@jagger-ui/components/editorial/EditorialHeader";
 import { usePapersTheme } from "@jagger-ui/hooks/usePapersTheme";
 import { usePapersScrollTop } from "@jagger-ui/hooks/usePapersScrollTop";
 
@@ -38,7 +38,8 @@ function PapersPage() {
 
   return (
     <div className={`papers-page papers-page--${theme}`}>
-      <PapersHeader
+      <EditorialHeader
+        mode="papers"
         query={query}
         onQueryChange={updateQuery}
         theme={theme}
